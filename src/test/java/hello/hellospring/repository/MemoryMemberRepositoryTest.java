@@ -21,16 +21,17 @@ public class MemoryMemberRepositoryTest {
     @Test
     public void save(){
         Member member = new Member();
-        member.setName("spring");   //member 이름 세팅
+        member.setName("spring");
 
-        repository.save(member);    //리포지토리에 이름 저장
+        repository.save(member);
 
-        //리포지토리에 저장된 member 조회. optional에서 값을 꺼낼땐 get으로 꺼냄
         Member result = repository.findById(member.getId()).get();
-        //member가 result랑 같다!
+        //System.out.println("result = " + (result == member));
+        //Assertions.assertEquals(member, result);
+        //Assertions.assertEquals(member, null);
         assertThat(result).isEqualTo(member);
 
-        //실무에서는 빌드 시 오류테스트 통과가 안되면 다음단계로 넘어갈 수 없게 만듬
+
     }
 
     @Test

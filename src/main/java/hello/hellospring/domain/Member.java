@@ -5,6 +5,7 @@ public class Member {
     private Long id;    //고객이 아니라 시스템이 저장하는 데이터 구분용 아이디
     private String name;
 
+
     public Long getId() {
         return id;
     }
