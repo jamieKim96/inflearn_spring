@@ -1,11 +1,13 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 /* 동시성 문제고려하지 않음. 실무에서는 HashMap 대신 ConcurrentHashMap 사용 권고
  * sequence는 숫자 키값 자동 생성해주는 역할. 실무에서는 AtomicLong 권고 */
+@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
