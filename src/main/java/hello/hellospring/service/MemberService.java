@@ -28,14 +28,9 @@ public class MemberService {
 
     public Long join(Member member) {
         //같은 이름의 중복회원 X
-        /*아래와 같은 형태는 모양이 안예쁨...
-        Optional<Member> result = memberRepository.findByName(member.getName());
-        result.ifPresent(m -> {
-            throw new IllegalStateException("이미 존재하는 값입니다")
-        });*/
-        validateDuplicateMember(member); //7
-        memberRepository.save(member);   //2
-        return member.getId();           //3
+            validateDuplicateMember(member); //7
+            memberRepository.save(member);   //2
+            return member.getId();           //3
     }
 
     private void validateDuplicateMember(Member member) {
@@ -49,8 +44,9 @@ public class MemberService {
      * 전체 회원 조회
      * @return
      */
-    public List<Member> findMembers(){
-        return memberRepository.findAll();
+    public List<Member> findMembers() {
+            return memberRepository.findAll();
+
     }
 
     public Optional<Member> findOne(Long memberId) {
