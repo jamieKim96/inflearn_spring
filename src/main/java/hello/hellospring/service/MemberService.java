@@ -5,10 +5,12 @@ import hello.hellospring.repository.MemberRepository;
 import hello.hellospring.repository.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
 
     //1
@@ -23,6 +25,7 @@ public class MemberService {
      * @param member
      * @return
      */
+
     public Long join(Member member) {
         //같은 이름의 중복회원 X
         /*아래와 같은 형태는 모양이 안예쁨...
